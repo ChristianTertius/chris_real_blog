@@ -4,6 +4,8 @@ import Project from './components/Project'
 import Blog from './components/Blog'
 import { Route, Routes } from 'react-router'
 import Navbar from './components/Navbar'
+import BlogDetail from './components/BlogDetail'
+import NotFound from './components/NotFound'
 
 function App() {
   return (
@@ -13,8 +15,10 @@ function App() {
 
       <Routes>
         <Route path='/' element={<About />} />
-        <Route path='/project' element={<Project />} />
-        <Route path='/blog' element={<Blog />} />
+        <Route path='/projects' element={<Project />} />
+        <Route path='/blogs' element={<Blog />} />
+        <Route path='/blog/blogdetail' element={<BlogDetail />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
 

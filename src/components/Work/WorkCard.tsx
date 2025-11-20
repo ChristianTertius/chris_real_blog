@@ -2,7 +2,7 @@ import WorkTechStack from "./WorkTechStack";
 
 const WorkCard = () => {
   return (
-    <div className="bg-main border rounded-sm p-5">
+    <div className="border border-secondary/20 rounded-sm p-5">
       <h1 className="text-xl">Fullstack Developer Intern</h1>
       <h1 className="opacity-80">PT Prodia Widyahusada Tbk (Feb 2024 - Feb 2025)</h1>
       <div className="mt-3">

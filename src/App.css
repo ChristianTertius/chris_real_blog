@@ -1,10 +1,11 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
 
 
 @theme {
   --color-main: #252525;
   --color-secondary: #f0e7db;
+  --color-third: #c19c60;
   --font-family-sans: 'Inter', sans-serif;
 }
 
@@ -12,6 +13,34 @@
   font-family: "JetBrains Mono", monospace;
 }
 
+
 body {
   @apply font-jetbrains;
+  /* @apply text-[.85rem] */
+}
+
+/* Tambahkan ini untuk hide scrollbar di body dan html */
+html,
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

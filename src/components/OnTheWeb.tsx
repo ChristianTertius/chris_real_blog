@@ -1,4 +1,4 @@
-import { PinIcon, UserRound } from "lucide-react"
+import { GithubIcon, InstagramIcon, Linkedin, Mail, PinIcon, UserRound } from "lucide-react"
 
 const OnTheWeb = () => {
   return (
@@ -9,9 +9,25 @@ const OnTheWeb = () => {
       </div>
 
       <div className="mt-5 space-y-2">
-        <h1>2003 Born in Manado, Indonesia</h1>
-        <h1>2025 Completed the Bachelor's Program in the School of Commputer Science at Bina Nusantara University</h1>
-        <h1>2025 Work on lalala</h1>
+
+        {/* TODO: fix this!!!! */}
+        <a href="mailto:christian160103@gmail.com" className="hover:bg-third transition-all duration-150 rounded-sm p-2 flex gap-2">
+          <Mail />
+          christian160103@gmail.com
+        </a>
+        <a href="https://github.com/ChristianTertius?tab=repositories" className="hover:bg-third transition-all duration-150 rounded-sm p-2 flex gap-2" target="_blank">
+          <GithubIcon />
+          ChristianTertius
+        </a>
+        <a href="https://www.instagram.com/kevinppxs/" className="hover:bg-third transition-all duration-150 rounded-sm p-2 flex gap-2" target="_blank">
+          <InstagramIcon />
+          christian_christer
+        </a>
+        <a href="https://www.linkedin.com/in/christian-carlos-tertius/" className="hover:bg-third transition-all duration-150 rounded-sm p-2 flex gap-2" target="_blank">
+          <Linkedin />
+          Christian Carlos Tertius
+        </a>
+
       </div>
     </div>
   )
