@@ -1,4 +1,9 @@
 import { Edit2, GithubIcon, InstagramIcon, Linkedin, Mail, PinIcon, UserRound } from "lucide-react"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 const OnTheWeb = () => {
   return (
@@ -6,7 +11,14 @@ const OnTheWeb = () => {
       <div className="flex items-center gap-2 ">
         <UserRound className="size-6" />
         <h1 className="text-2xl font-bold underline underline-offset-8">On the web</h1>
-        <Edit2 className="size-5 cursor-pointer hover:text-third" />
+        <Tooltip>
+          <TooltipTrigger>
+            <Edit2 className="ml-1 size-5 cursor-pointer hover:text-third" />
+          </TooltipTrigger>
+          <TooltipContent side="bottom">
+            <p>Add new social</p>
+          </TooltipContent>
+        </Tooltip>
       </div>
 
       <div className="mt-5 space-y-2">

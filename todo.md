@@ -1,3 +1,4 @@
+- fix techs field
 - user auth -> only chris, inject ae
 - loading state
 - light mode & dark mode

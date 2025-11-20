@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router"
+// import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const location = useLocation();
@@ -7,6 +8,8 @@ const Navbar = () => {
       <Link to="/" className={`hover:text-third transition-colors duration-150 hover:underline underline-offset-10 decoration-2 ${location.pathname == '/' ? 'underline underline-offset-10 text-third' : ''}`}>About</Link>
       <Link to="/projects" className={`hover:text-third transition-colors duration-150 hover:underline underline-offset-10 decoration-2 ${location.pathname == '/projects' ? 'underline underline-offset-10 text-third' : ''}`}>Project</Link>
       <Link to="/blogs" className={`hover:text-third transition-colors duration-150 hover:underline underline-offset-10 decoration-2 ${location.pathname == '/blogs' ? 'underline underline-offset-10 text-third' : ''}`}>Blog</Link>
+      {/* <ThemeToggle /> */}
+
     </nav>
   )
 }

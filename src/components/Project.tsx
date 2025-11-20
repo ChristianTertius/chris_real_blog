@@ -1,7 +1,26 @@
 import { ArrowUpRight, GithubIcon, PlusIcon } from "lucide-react";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
-import * as Tooltip from '@radix-ui/react-tooltip';
 import { useGSAPTyping } from "../hooks/useGSAPTyping";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose
+} from "@/components/ui/dialog"
+import { Button } from "./ui/button"
+import { Label } from "@radix-ui/react-label"
+import { Input } from "./ui/input"
+import { Textarea } from "./ui/textarea";
+import TagInput from "./TagInput";
 
 const Project = () => {
   useDocumentTitle('Projects - Chris')
@@ -23,8 +42,64 @@ const Project = () => {
           )}
         </h1>
         <div className="flex items-center justify-between gap-2">
-          <h1>Add New Project</h1>
-          <PlusIcon className="hover:text-third cursor-pointer" />
+          <Dialog>
+            <Tooltip>
+              <TooltipTrigger>
+                <DialogTrigger>
+                  <PlusIcon className="hover:text-third cursor-pointer" />
+                </DialogTrigger>
+              </TooltipTrigger>
+
+              <TooltipContent side="bottom">
+                <p>Add New Project</p>
+              </TooltipContent>
+            </Tooltip>
+
+            <DialogContent className="sm:max-w-[800px]">
+              <DialogHeader className="mb-3" >
+                <DialogTitle>Add New Project</DialogTitle>
+              </DialogHeader>
+              <div className="grid gap-4">
+                <div className="grid gap-3">
+                  <Label htmlFor="projectname">Project Name</Label>
+                  <Input id="projectname" name="projectname" placeholder="input projectname" />
+                </div>
+                <div className="flex items-center justify-between gap-5">
+                  <div className="grid gap-3 w-full">
+                    <Label htmlFor="about">About</Label>
+                    <Input id="about" name="about" placeholder="input about" />
+                  </div>
+                  <div className="grid gap-3 w-1/4">
+                    <Label htmlFor="year">Year</Label>
+                    <Input id="year" name="year" placeholder="input year" />
+                  </div>
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="achievement">Achievement</Label>
+                  <Textarea id="achievement" name="achievement" placeholder="input achievement" />
+                </div>
+                <div className="grid gap-3">
+                  <TagInput />
+                </div>
+                <div className="flex gap-5 justify-between">
+                  <div className="grid gap-3 w-full">
+                    <Label htmlFor="link_github">Link Github</Label>
+                    <Input id="link_github" name="link_github" placeholder="input link_github" />
+                  </div>
+                  <div className="grid gap-3 w-full">
+                    <Label htmlFor="link_web">Link_web</Label>
+                    <Input id="link_web" name="link_web" placeholder="input link_web" />
+                  </div>
+                </div>
+              </div>
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button className="bg-main cursor-pointer">Cancel</Button>
+                </DialogClose>
+                <Button type="submit" variant="outline" className="bg-main cursor-pointer">Add Project</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
 
@@ -58,28 +133,6 @@ const Project = () => {
             </div>
 
             {/*TODO:: bekeng ini reusable*/}
-            <Tooltip.Root>
-              <Tooltip.Trigger asChild>
-                <a
-                  href="https://github.com/Xynno22/InventoryManagement"
-                  className="p-2 border rounded-full hover:border-third transition-all duration-150"
-                  target="_blank"
-                >
-                  <GithubIcon className="hover:text-third transition-all duration-150" />
-                </a>
-              </Tooltip.Trigger>
-              <Tooltip.Portal>
-                <Tooltip.Content
-                  className="bg-gray-900 text-white text-sm px-3 py-1.5 rounded shadow-lg"
-                  sideOffset={5}
-                >
-                  Go to Github
-                  <Tooltip.Arrow className="fill-gray-900" />
-                </Tooltip.Content>
-              </Tooltip.Portal>
-            </Tooltip.Root>
-
-
           </div>
         </div>
       </div>
@@ -112,30 +165,6 @@ const Project = () => {
               <p className="tracking-wider border border-secondary/30 p-1 px-2 rounded-full text-sm">Tailwind</p>
               <p className="tracking-wider border border-secondary/30 p-1 px-2 rounded-full text-sm">PHP Breeze</p>
             </div>
-
-            {/*TODO:: bekeng ini reusable*/}
-            <Tooltip.Root>
-              <Tooltip.Trigger asChild>
-                <a
-                  href="https://github.com/Xynno22/InventoryManagement"
-                  className="p-2 border rounded-full hover:border-third transition-all duration-150"
-                  target="_blank"
-                >
-                  <GithubIcon className="hover:text-third transition-all duration-150" />
-                </a>
-              </Tooltip.Trigger>
-              <Tooltip.Portal>
-                <Tooltip.Content
-                  className="bg-gray-900 text-white text-sm px-3 py-1.5 rounded shadow-lg"
-                  sideOffset={5}
-                >
-                  Go to Github
-                  <Tooltip.Arrow className="fill-gray-900" />
-                </Tooltip.Content>
-              </Tooltip.Portal>
-            </Tooltip.Root>
-
-
           </div>
         </div>
       </div>

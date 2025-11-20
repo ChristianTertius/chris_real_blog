@@ -1,4 +1,9 @@
 import { Link } from "react-router";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { useGSAPTyping } from "../hooks/useGSAPTyping";
 import { PlusIcon } from "lucide-react";
@@ -22,8 +27,15 @@ const Blog = () => {
           )}
         </h1>
         <div className="flex gap-2">
-          <h2>Add New Blog</h2>
-          <PlusIcon />
+          <Tooltip>
+            <TooltipTrigger>
+              <PlusIcon className="cursor-pointer hover:text-third" />
+            </TooltipTrigger>
+
+            <TooltipContent side="bottom">
+              <p>Add new Blog</p>
+            </TooltipContent>
+          </Tooltip>
         </div>
       </div>
 

@@ -1,4 +1,22 @@
 import { PinIcon, PlusIcon } from "lucide-react"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose
+} from "@/components/ui/dialog"
+import { Button } from "./ui/button"
+import { Label } from "@radix-ui/react-label"
+import { Input } from "./ui/input"
 
 const Bio = () => {
   return (
@@ -7,7 +25,42 @@ const Bio = () => {
       <div className="flex items-center gap-2 ">
         <PinIcon className="size-6" />
         <h1 className="text-2xl font-bold underline underline-offset-8">Bio</h1>
-        <PlusIcon className="hover:text-third cursor-pointer" />
+        <Dialog>
+          <Tooltip>
+            <TooltipTrigger>
+              <DialogTrigger>
+                <PlusIcon className="hover:text-third cursor-pointer" />
+              </DialogTrigger>
+            </TooltipTrigger>
+
+            <TooltipContent side="bottom">
+              <p>Add new Bio</p>
+            </TooltipContent>
+          </Tooltip>
+
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Add new Bio</DialogTitle>
+              <DialogDescription className="text-white mt-2">Input Your Journey Here :)</DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4">
+              <div className="grid gap-3">
+                <Label htmlFor="year">Year</Label>
+                <Input id="year" name="year" placeholder="input year" />
+              </div>
+              <div className="grid gap-3">
+                <Label htmlFor="bio">Bio</Label>
+                <Input id="bio" name="bio" placeholder="input bio" />
+              </div>
+            </div>
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button className="bg-main cursor-pointer">Cancel</Button>
+              </DialogClose>
+              <Button type="submit" variant="outline" className="bg-main cursor-pointer">Add Bio</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
 
       <div className="mt-5 space-y-2">
