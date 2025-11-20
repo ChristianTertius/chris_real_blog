@@ -1,4 +1,4 @@
-import { Computer, MapPin } from "lucide-react"
+import { Computer, Edit2, MapPin } from "lucide-react"
 import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import Work from "./Work"
 import Bio from "./Bio"
@@ -25,11 +25,11 @@ const About = () => {
             {!isComplete && (
               <span className="inline-block ml-1 text-third">|</span>
             )}</h1>
-          <h3 className="text-lg">Software Engineer || Developer</h3>
+          <h3 className="text-lg items-center">Software Engineer || Developer </h3>
         </div>
         <div className="flex gap-2 items-center">
           <MapPin className="size-4" />
-          <h1 className="font-thin">West Jakarta, Indonesia</h1>
+          <h1 className="font-thin">West Jakarta, Indonesia </h1>
         </div>
         <div className="flex gap-2 items-center">
           <Computer className="size-4" />

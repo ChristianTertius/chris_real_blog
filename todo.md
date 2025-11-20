@@ -1,3 +1,4 @@
+- user auth -> only chris, inject ae
 - loading state
 - light mode & dark mode
 - translate to indo(with checkbox)

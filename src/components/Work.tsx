@@ -1,4 +1,4 @@
-import { BicepsFlexed } from "lucide-react"
+import { BicepsFlexed, PlusIcon } from "lucide-react"
 import WorkCard from "./Work/WorkCard"
 
 const Work = () => {
@@ -7,6 +7,7 @@ const Work = () => {
       <div className="flex items-center gap-2 mb-5">
         <BicepsFlexed className="size-6" />
         <h1 className="text-2xl font-bold underline underline-offset-8">Work</h1>
+        <PlusIcon className="hover:text-third cursor-pointer" />
       </div>
       <WorkCard />
     </div>

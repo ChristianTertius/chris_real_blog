@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { useGSAPTyping } from "../hooks/useGSAPTyping";
+import { PlusIcon } from "lucide-react";
 
 const Blog = () => {
   useDocumentTitle("Blog - Chris")
@@ -13,12 +14,19 @@ const Blog = () => {
   })
   return (
     <div className="px-5 mt-5 sm:px-0">
-      <h1 className="text-4xl font-bold">
-        <span ref={elementRef}></span>
-        {!isComplete && (
-          <span className="inline-block ml-1 text-third">|</span>
-        )}
-      </h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-4xl font-bold">
+          <span ref={elementRef}></span>
+          {!isComplete && (
+            <span className="inline-block ml-1 text-third">|</span>
+          )}
+        </h1>
+        <div className="flex gap-2">
+          <h2>Add New Blog</h2>
+          <PlusIcon />
+        </div>
+      </div>
+
 
       <div className="my-5 rounded-md duration-50 flex gap-2 items-center justify-between group flex-wrap">
         <Link to="/blog/blogdetail" className="text-lg group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">Why i choose neovim instead of VSCode for fullstack development?</Link>

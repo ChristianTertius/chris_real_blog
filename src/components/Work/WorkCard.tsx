@@ -1,9 +1,10 @@
+import { Edit2 } from "lucide-react";
 import WorkTechStack from "./WorkTechStack";
 
 const WorkCard = () => {
   return (
     <div className="border border-secondary/20 rounded-sm p-5">
-      <h1 className="text-xl">Fullstack Developer Intern</h1>
+      <h1 className="text-xl">Fullstack Developer Intern <Edit2 className="inline-block size-4 cursor-pointer hover:text-third" /></h1>
       <h1 className="opacity-80">PT Prodia Widyahusada Tbk (Feb 2024 - Feb 2025)</h1>
       <div className="mt-3">
         <p>- Developed and maintained three internal systems using PHP (Laravel & CodeIgniter), collaborating with IT teams and

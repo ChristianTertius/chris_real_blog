@@ -1,4 +1,4 @@
-import { PinIcon } from "lucide-react"
+import { PinIcon, PlusIcon } from "lucide-react"
 
 const Bio = () => {
   return (
@@ -7,6 +7,7 @@ const Bio = () => {
       <div className="flex items-center gap-2 ">
         <PinIcon className="size-6" />
         <h1 className="text-2xl font-bold underline underline-offset-8">Bio</h1>
+        <PlusIcon className="hover:text-third cursor-pointer" />
       </div>
 
       <div className="mt-5 space-y-2">

@@ -1,4 +1,4 @@
-import { ArrowUpRight, GithubIcon } from "lucide-react";
+import { ArrowUpRight, GithubIcon, PlusIcon } from "lucide-react";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import * as Tooltip from '@radix-ui/react-tooltip';
 import { useGSAPTyping } from "../hooks/useGSAPTyping";
@@ -15,12 +15,18 @@ const Project = () => {
 
   return (
     <div className="px-5 mt-5 sm:px-0">
-      <h1 className="text-4xl font-bold">
-        <span ref={elementRef}></span>
-        {!isComplete && (
-          <span className="inline-block ml-1 text-third">|</span>
-        )}
-      </h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-4xl font-bold">
+          <span ref={elementRef}></span>
+          {!isComplete && (
+            <span className="inline-block ml-1 text-third">|</span>
+          )}
+        </h1>
+        <div className="flex items-center justify-between gap-2">
+          <h1>Add New Project</h1>
+          <PlusIcon className="hover:text-third cursor-pointer" />
+        </div>
+      </div>
 
       <div className="block my-5 space-y-5 border border-secondary/20 p-5 rounded-md group hover:border-third transition-all duration-150">
         <div className="flex justify-between">
