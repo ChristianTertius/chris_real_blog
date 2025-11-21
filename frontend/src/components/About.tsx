@@ -1,4 +1,4 @@
-import { Computer, Edit2, MapPin } from "lucide-react"
+import { Computer, MapPin } from "lucide-react"
 import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import Work from "./Work"
 import Bio from "./Bio"
@@ -9,7 +9,6 @@ import TopBlog from "./TopBlog"
 import { useGSAPTyping } from "../hooks/useGSAPTyping"
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
 import { Input } from "./ui/input"
-import { useState } from "react"
 import { Textarea } from "./ui/textarea"
 
 const About = () => {
