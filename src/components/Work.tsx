@@ -29,8 +29,8 @@ const Work = () => {
         <h1 className="text-2xl font-bold underline underline-offset-8">Work</h1>
         <Dialog>
           <Tooltip>
-            <TooltipTrigger>
-              <DialogTrigger>
+            <TooltipTrigger asChild>
+              <DialogTrigger asChild>
                 <PlusIcon className="hover:text-third cursor-pointer" />
               </DialogTrigger>
             </TooltipTrigger>
@@ -40,7 +40,7 @@ const Work = () => {
             </TooltipContent>
           </Tooltip>
 
-          <DialogContent>
+          <DialogContent className="sm:max-w-[800px]">
             <DialogHeader>
               <DialogTitle>Add New Work</DialogTitle>
               <DialogDescription className="text-white/50 text-sm">Input your Career here :)</DialogDescription>

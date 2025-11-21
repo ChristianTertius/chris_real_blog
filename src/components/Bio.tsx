@@ -1,4 +1,4 @@
-import { PinIcon, PlusIcon } from "lucide-react"
+import { ClosedCaptionIcon, Cross, PinIcon, PlusIcon } from "lucide-react"
 import {
   Tooltip,
   TooltipContent,
@@ -27,8 +27,8 @@ const Bio = () => {
         <h1 className="text-2xl font-bold underline underline-offset-8">Bio</h1>
         <Dialog>
           <Tooltip>
-            <TooltipTrigger>
-              <DialogTrigger>
+            <TooltipTrigger asChild>
+              <DialogTrigger asChild>
                 <PlusIcon className="hover:text-third cursor-pointer" />
               </DialogTrigger>
             </TooltipTrigger>
@@ -38,12 +38,23 @@ const Bio = () => {
             </TooltipContent>
           </Tooltip>
 
-          <DialogContent className="sm:max-w-[425px]">
+          <DialogContent className="sm:max-w-[625px]">
             <DialogHeader>
               <DialogTitle>Add new Bio</DialogTitle>
               <DialogDescription className="text-white mt-2">Input Your Journey Here :)</DialogDescription>
             </DialogHeader>
             <div className="grid gap-4">
+              <div className="grid gap-3">
+                <div className="border p-2 rounded-md">
+                  <p>2023 | Born in Manado, Indonesia</p>
+                </div>
+                <div className="border p-2 rounded-md">
+                  <p>2025 | Complete Bachelor Degree in Binus University</p>
+                </div>
+                <div className="border p-2 rounded-md">
+                  <p>2023 | Work on lalala</p>
+                </div>
+              </div>
               <div className="grid gap-3">
                 <Label htmlFor="year">Year</Label>
                 <Input id="year" name="year" placeholder="input year" />

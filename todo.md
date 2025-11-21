@@ -1,5 +1,5 @@
-- fix techs field
-- user auth -> only chris, inject ae
+- old values taginput
+- user auth -> only chris, inject ae -> selain itu view only
 - loading state
 - light mode & dark mode
 - translate to indo(with checkbox)

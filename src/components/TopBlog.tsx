@@ -17,7 +17,7 @@ const TopBlog = () => {
         <h1 className="text-lg group-hover:text-third transition-all duration-150">React Native better than Flutter?</h1>
         <p className="group-hover:text-third transition-all duration-150">Des, 2025</p>
       </a>
-      <Link to="/projects" className="text-third text-shadow-amber-950 text-sm items-center mt-5 flex gap-1 group hover:underline underline-offset-8">
+      <Link to="/blogs" className="text-third text-shadow-amber-950 text-sm items-center mt-5 flex gap-1 group hover:underline underline-offset-8">
         See More
         <ChevronRight className="size-4 group-hover:translate-x-1 transition-all duration-150" /></Link>
 

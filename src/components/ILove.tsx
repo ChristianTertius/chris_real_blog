@@ -1,4 +1,6 @@
 import { HeartIcon } from "lucide-react"
+import { Input } from "./ui/input"
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
 
 const ILove = () => {
   return (
@@ -9,7 +11,14 @@ const ILove = () => {
       </div>
 
       <div className="mt-5 space-y-2">
-        Music, Badminton, Playing Guitar, Web and Mobile Development
+        <Popover>
+          <PopoverTrigger>
+            Music, Badminton, Playing Guitar, Web and Mobile Development
+          </PopoverTrigger>
+          <PopoverContent className="sm:w-[580px]">
+            <Input defaultValue={"Music, Badminton, Playing Guitar, Web and Mobile Development"} />
+          </PopoverContent>
+        </Popover>
       </div>
     </div>
   )

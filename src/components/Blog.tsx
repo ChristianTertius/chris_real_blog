@@ -26,10 +26,12 @@ const Blog = () => {
             <span className="inline-block ml-1 text-third">|</span>
           )}
         </h1>
-        <div className="flex gap-2">
+        <div className="flex items-center justify-between gap-2">
           <Tooltip>
-            <TooltipTrigger>
-              <PlusIcon className="cursor-pointer hover:text-third" />
+            <TooltipTrigger asChild>
+              <Link to={'/blog/addnewblog'}>
+                <PlusIcon className="cursor-pointer hover:text-third" />
+              </Link>
             </TooltipTrigger>
 
             <TooltipContent side="bottom">
