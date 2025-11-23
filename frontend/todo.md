@@ -3,3 +3,4 @@
 - loading state
 - light mode & dark mode
 - translate to indo(with checkbox)
+- load tech in edit 
