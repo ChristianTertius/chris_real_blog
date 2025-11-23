@@ -103,7 +103,7 @@ const About = () => {
         </PopoverContent>
       </Popover>
 
-      <Bio />
+      <Bio user={user} />
       <Work />
       <ILove />
       <TopProject />
