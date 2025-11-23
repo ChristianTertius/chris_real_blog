@@ -17,8 +17,45 @@ import {
 import { Button } from "./ui/button"
 import { Label } from "@radix-ui/react-label"
 import { Input } from "./ui/input"
+import type React from "react"
+import { useEffect, useState } from "react"
+import type { Bio } from "@/types"
+import { bioService } from "@/services/bioService"
 
-const Bio = () => {
+const Bio: React.FC = () => {
+  const [bios, setBios] = useState<Bio[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    fetchBios();
+  }, []);
+
+  const fetchBios = async () => {
+    try {
+      const data = await bioService.getAll();
+      setBios(data);
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Failed to fetch bios');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDelete = async (id: number) => {
+    if (!confirm('Are you sure?')) return;
+
+    try {
+      await bioService.delete(id);
+      setBios(bios.filter(bio => bio.id !== id));
+    } catch (err: any) {
+      alert('Failed to delete bio');
+    }
+  };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div className="text-red-500">{error}</div>;
+
   return (
 
     <div className="my-10">
@@ -78,6 +115,33 @@ const Bio = () => {
         <h1>2003 Born in Manado, Indonesia</h1>
         <h1>2025 Completed the Bachelor's Program in the School of Commputer Science at Bina Nusantara University</h1>
         <h1>2025 Work on lalala</h1>
+        {/* {bios.map((bio) => ( */}
+        {/*   <div key={bio.id} className="p-4 bg-white rounded-lg shadow"> */}
+        {/*     <div className="flex justify-between items-start"> */}
+        {/*       <div> */}
+        {/*         <h3 className="text-xl font-semibold">{bio.year}</h3> */}
+        {/*         <p className="text-gray-600 mt-2">{bio.description}</p> */}
+        {/*         <div className="flex gap-2 mt-3"> */}
+        {/*           {bio.techs.map((tech, index) => ( */}
+        {/*             <span */}
+        {/*               key={index} */}
+        {/*               className="px-2 py-1 text-sm bg-blue-100 text-blue-800 rounded" */}
+        {/*             > */}
+        {/*               {tech} */}
+        {/*             </span> */}
+        {/*           ))} */}
+        {/*         </div> */}
+        {/*       </div> */}
+        {/**/}
+        {/*       <button */}
+        {/*         onClick={() => handleDelete(bio.id)} */}
+        {/*         className="text-red-500 hover:text-red-700" */}
+        {/*       > */}
+        {/*         Delete */}
+        {/*       </button> */}
+        {/*     </div> */}
+        {/*   </div> */}
+        {/* ))} */}
       </div>
     </div>
 

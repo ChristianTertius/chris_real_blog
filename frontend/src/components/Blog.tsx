@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import {
   Tooltip,
   TooltipContent,
@@ -7,6 +7,9 @@ import {
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { useGSAPTyping } from "../hooks/useGSAPTyping";
 import { PlusIcon } from "lucide-react";
+import { useEffect, useState } from "react";
+import type { User } from "@/types";
+import { authService } from "@/services/authService";
 
 const Blog = () => {
   useDocumentTitle("Blog - Chris")
@@ -17,6 +20,45 @@ const Blog = () => {
     cursor: true,
     onComplete: () => console.log('Typing Complete')
   })
+
+
+  // take user email
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
+  const fetchUser = async () => {
+    try {
+      const userData = await authService.me();
+      setUser(userData);
+    } catch (error) {
+      // Kalau gagal (token invalid), redirect ke login
+      navigate('/login');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    await authService.logout();
+    navigate('/login');
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div>Loading...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return null;
+  }
   return (
     <div className="px-5 mt-5 sm:px-0">
       <div className="flex items-center justify-between">

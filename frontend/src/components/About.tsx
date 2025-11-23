@@ -10,6 +10,10 @@ import { useGSAPTyping } from "../hooks/useGSAPTyping"
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router"
+import type { User } from "@/types"
+import { authService } from "@/services/authService"
 
 const About = () => {
   useDocumentTitle('About Me - Chris')
@@ -20,6 +24,44 @@ const About = () => {
     cursor: true,
     onComplete: () => console.log('Typing Complete')
   })
+
+  // take user email
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
+  const fetchUser = async () => {
+    try {
+      const userData = await authService.me();
+      setUser(userData);
+    } catch (error) {
+      // Kalau gagal (token invalid), redirect ke login
+      navigate('/login');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    await authService.logout();
+    navigate('/login');
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div>Loading...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return null;
+  }
 
   return (
     <div className="px-5 mt-5 sm:px-0">
@@ -79,6 +121,12 @@ const About = () => {
       <TopProject />
       <TopBlog />
       <OnTheWeb />
+      <button
+        onClick={handleLogout}
+        className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+      >
+        Logout
+      </button>
     </div>
   )
 

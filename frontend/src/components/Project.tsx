@@ -9,7 +9,7 @@ import {
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
+  // DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -21,6 +21,10 @@ import { Label } from "@radix-ui/react-label"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea";
 import TagInput from "./TagInput";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { authService } from "@/services/authService";
+import type { User } from "@/types";
 
 const Project = () => {
   useDocumentTitle('Projects - Chris')
@@ -31,6 +35,44 @@ const Project = () => {
     cursor: true,
     onComplete: () => console.log('Typing Complete')
   })
+
+  // take user email
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
+  const fetchUser = async () => {
+    try {
+      const userData = await authService.me();
+      setUser(userData);
+    } catch (error) {
+      // Kalau gagal (token invalid), redirect ke login
+      navigate('/login');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    await authService.logout();
+    navigate('/login');
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div>Loading...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return null;
+  }
 
   return (
     <div className="px-5 mt-5 sm:px-0">
