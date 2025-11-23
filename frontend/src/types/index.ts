@@ -54,6 +54,8 @@ export interface Project {
   type: string;
   year: number;
   achievement: string;
+  link_github: string;
+  link_website: string;
   techs: string[];
   created_at: string;
   updated_at: string;
@@ -64,6 +66,8 @@ export interface ProjectRequest {
   type: string;
   year: number;
   achievement: string;
+  link_github: string;
+  link_website: string;
   techs: string[];
 }
 

@@ -1,5 +1,5 @@
 import api from '@/lib/api';
-import { Project, ProjectRequest, ApiResponse } from '@/types';
+import type { Project, ProjectRequest, ApiResponse } from '@/types';
 
 export const projectService = {
 

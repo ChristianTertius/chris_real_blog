@@ -11,6 +11,8 @@ class Project extends Model
         'type',
         'year',
         'achievement',
+        'link_github',
+        'link_website',
         'techs',
     ];
     protected $casts = [

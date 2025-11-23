@@ -28,6 +28,8 @@ class ProjectController extends Controller
             'type' => 'required|string',
             'year' => 'required|integer',
             'achievement' => 'required|string',
+            'link_github' => 'required|string',
+            'link_website' => 'required|string',
             'techs' => 'required|array',
         ]);
 
@@ -54,6 +56,8 @@ class ProjectController extends Controller
             'type' => 'required|string',
             'year' => 'required|integer',
             'achievement' => 'required|string',
+            'link_github' => 'required|string',
+            'link_website' => 'required|string',
             'techs' => 'required|array',
         ]);
         $project->update($validated);

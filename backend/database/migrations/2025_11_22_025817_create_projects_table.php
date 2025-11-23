@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('type');
             $table->integer('year');
             $table->text('achievement');
+            $table->string('link_github');
+            $table->string('link_website');
             $table->json('techs')->nullable();
             $table->timestamps();
         });

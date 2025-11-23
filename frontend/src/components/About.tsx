@@ -16,19 +16,17 @@ import type { User } from "@/types"
 import { authService } from "@/services/authService"
 
 const About = () => {
-  useDocumentTitle('About Me - Chris')
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
+  useDocumentTitle(user?.fullname ? `(CHRIS HERE) About Me - ${user.fullname}` : 'About Me - Chris');
   const { elementRef, isComplete } = useGSAPTyping('Christian Carlos Tertius', {
     speed: 0.08,
     delay: 0.3,
     cursor: true,
     onComplete: () => console.log('Typing Complete')
   })
-
-  // take user email
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchUser();
@@ -39,29 +37,14 @@ const About = () => {
       const userData = await authService.me();
       setUser(userData);
     } catch (error) {
-      // Kalau gagal (token invalid), redirect ke login
       navigate('/login');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleLogout = async () => {
-    await authService.logout();
-    navigate('/login');
-  };
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div>Loading...</div>
-      </div>
-    );
-  }
-
-  if (!user) {
-    return null;
-  }
+  if (loading) { return (<div className="flex items-center justify-center min-h-screen"> <div>Loading...</div> </div>); }
+  if (!user) { return null; }
 
   return (
     <div className="px-5 mt-5 sm:px-0">
@@ -72,27 +55,29 @@ const About = () => {
               <span className="inline-block ml-1 text-third">|</span>
             )}</h1>
 
+          {/* Popover user current role */}
           <Popover>
             <PopoverTrigger>
-              <h3 className={`text-lg items-center`}>Software Engineer || Developer </h3>
+              <h3 className={`text-lg items-center`}>{user.current_role}</h3>
             </PopoverTrigger>
             <PopoverContent>
-              <Input defaultValue={"Software Engineer || Developer "} />
+              <Input defaultValue={user.current_role} />
             </PopoverContent>
           </Popover>
-
         </div>
+
         <div className="flex gap-2 items-center">
           <MapPin className="size-4" />
           <Popover>
             <PopoverTrigger>
-              <h1 className="font-thin">West Jakarta, Indonesia </h1>
+              <h1 className="font-thin">{user.current_location}</h1>
             </PopoverTrigger>
             <PopoverContent>
-              <Input defaultValue={"West Jakarta, Indonesia"} />
+              <Input defaultValue={user.current_location} />
             </PopoverContent>
           </Popover>
         </div>
+
         <div className="flex gap-2 items-center">
           <Computer className="size-4" />
           <Popover>
@@ -104,14 +89,17 @@ const About = () => {
             </PopoverContent>
           </Popover>
         </div>
+
       </div>
+
+      {/* Display user description */}
       <Popover>
         <PopoverTrigger>
-          <p className="tracking-wider text-left">Hi, I’m Christian! I build things for the web and love exploring how technology can make life and work more efficient. Every day, I challenge myself to learn something new—whether it’s backend development, system design, or improving the way I manage and understand complex systems. I also enjoy creating content in my free time, sharing moments, thoughts, and things I’m passionate about.</p>
+          <p className="tracking-wider text-left">{user.description}</p>
         </PopoverTrigger>
 
         <PopoverContent className="sm:w-[900px]">
-          <Textarea defaultValue={"Hi, I’m Christian! I build things for the web and love exploring how technology can make life and work more efficient. Every day, I challenge myself to learn something new—whether it’s backend development, system design, or improving the way I manage and understand complex systems. I also enjoy creating content in my free time, sharing moments, thoughts, and things I’m passionate about."} />
+          <Textarea defaultValue={user.description} />
         </PopoverContent>
       </Popover>
 
@@ -121,12 +109,6 @@ const About = () => {
       <TopProject />
       <TopBlog />
       <OnTheWeb />
-      <button
-        onClick={handleLogout}
-        className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-      >
-        Logout
-      </button>
     </div>
   )
 
