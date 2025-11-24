@@ -8,6 +8,7 @@ import BlogDetail from './components/BlogDetail'
 import NotFound from './components/NotFound'
 import AddNewBlog from './components/AddNewBlog'
 import LoginModal from './components/LoginModal'
+import { Toaster } from './components/ui/sonner'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/login' element={<LoginModal />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <Toaster />
     </div>
 
   )

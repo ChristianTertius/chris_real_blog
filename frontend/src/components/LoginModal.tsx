@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authService } from '@/services/authService';
+import { toast } from 'sonner';
 
 export default function LoginModal() {
   const [email, setEmail] = useState('');
@@ -17,7 +18,11 @@ export default function LoginModal() {
 
     try {
       await authService.login({ email, password });
-      // Token & user udah disimpan di localStorage oleh authService
+      toast.success("Login Successfully🎉", {
+        description: "Selamat datang kembali. Anda akan dialihkan ke dashboard.",
+        duration: 3000,
+        position: 'top-center'
+      });
       navigate('/');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Login failed');
@@ -28,7 +33,6 @@ export default function LoginModal() {
 
   return (
     <div className="flex items-center text-main justify-center min-h-screen">
-
       <div className="w-full max-w-md p-8 border text-white rounded-lg shadow-md">
         <h2 className="mb-6 text-2xl font-bold text-center">Login</h2>
 

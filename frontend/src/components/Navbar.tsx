@@ -3,6 +3,7 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router"
 import { Button } from "./ui/button";
 import type { User } from "@/types";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 // import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
@@ -13,6 +14,10 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await authService.logout();
+    toast.success("Logout Success", {
+      description: "anda telah berhasil logout, bye bye 🖐",
+      position: 'top-center'
+    })
     navigate('/login');
   }
 
