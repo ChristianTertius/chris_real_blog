@@ -15,12 +15,21 @@
   font-family: "JetBrains Mono", monospace;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1f1f1f inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 body {
   @apply font-jetbrains;
   /* @apply text-[.85rem] */
 }
 
-/* Tambahkan ini untuk hide scrollbar di body dan html */
+/* for hide scrollbar */
 html,
 body {
   -ms-overflow-style: none;

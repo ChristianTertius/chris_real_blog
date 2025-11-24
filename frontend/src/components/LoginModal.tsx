@@ -2,8 +2,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authService } from '@/services/authService';
 import { toast } from 'sonner';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from './ui/dialog';
+import { Label } from './ui/label';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
 
-export default function LoginModal() {
+export default function LoginModal({ onClose, onLoginSuccess, onOpenChange }: any) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -19,10 +23,11 @@ export default function LoginModal() {
     try {
       await authService.login({ email, password });
       toast.success("Login Successfully🎉", {
-        description: "Selamat datang kembali. Anda akan dialihkan ke dashboard.",
+        description: "Anda Chris kan yak?????",
         duration: 3000,
         position: 'top-center'
       });
+      onLoginSuccess()
       navigate('/');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Login failed');
@@ -32,48 +37,46 @@ export default function LoginModal() {
   };
 
   return (
-    <div className="flex items-center text-main justify-center min-h-screen">
-      <div className="w-full max-w-md p-8 border text-white rounded-lg shadow-md">
-        <h2 className="mb-6 text-2xl font-bold text-center">Login</h2>
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Login</DialogTitle>
+          <DialogDescription>
+            Masukkan email dan password Anda untuk login.
+          </DialogDescription>
+        </DialogHeader>
 
-        {error && (
-          <div className="p-3 mb-4 text-red-700 bg-red-100 rounded">
-            {error}
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-medium">Email</label>
-            <input
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
               type="email"
+              placeholder="nama@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border rounded-lg"
               required
+              className='bg-main'
             />
           </div>
 
-          <div className="mb-6">
-            <label className="block mb-2 text-sm font-medium">Password</label>
-            <input
+          <div className="space-y-2">
+            <Label htmlFor="password">Password</Label>
+            <Input
+              id="password"
               type="password"
+              placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border rounded-lg"
               required
             />
           </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 disabled:bg-gray-400"
-          >
+          <Button type="submit" className="w-full" disabled={loading}>
             {loading ? 'Loading...' : 'Login'}
-          </button>
+          </Button>
         </form>
-      </div>
-    </div>
-  );
+      </DialogContent>
+    </Dialog>
+  )
 }

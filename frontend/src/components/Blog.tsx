@@ -43,11 +43,6 @@ const Blog = () => {
     }
   };
 
-  const handleLogout = async () => {
-    await authService.logout();
-    navigate('/login');
-  };
-
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
