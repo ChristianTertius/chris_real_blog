@@ -47,6 +47,24 @@ export interface BioRequest {
   techs: string[];
 }
 
+// works types
+export interface Work {
+  id: number;
+  role: string;
+  place: string;
+  description: string;
+  techs: string[];
+  created_at: string;
+  updated_at: string;
+}
+
+export interface WorkRequest {
+  role: string;
+  place: string;
+  description: string;
+  techs: string[];
+}
+
 // project types
 export interface Project {
   id: number;

@@ -4,3 +4,4 @@
 - light mode & dark mode
 - translate to indo(with checkbox)
 - load tech in edit 
+- work taginput consume api
