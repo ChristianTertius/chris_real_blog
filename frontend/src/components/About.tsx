@@ -1,4 +1,4 @@
-import { Computer, MapPin } from "lucide-react"
+import { Computer, MailIcon, MapPin } from "lucide-react"
 import { useDocumentTitle } from "../hooks/useDocumentTitle"
 import Work from "./Work"
 import Bio from "./Bio"
@@ -7,108 +7,75 @@ import OnTheWeb from "./OnTheWeb"
 import TopProject from "./TopProject"
 import TopBlog from "./TopBlog"
 import { useGSAPTyping } from "../hooks/useGSAPTyping"
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
-import { Input } from "./ui/input"
-import { Textarea } from "./ui/textarea"
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router"
 import type { User } from "@/types"
-import { authService } from "@/services/authService"
+import Footer from "./Footer"
+import usersData from '@/datas/user.json'
 
 const About = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  useDocumentTitle('About Me - Chris');
 
-  useDocumentTitle(user?.fullname ? `(CHRIS HERE) About Me - ${user.fullname}` : 'About Me - Chris');
-  const { elementRef, isComplete } = useGSAPTyping('Christian Carlos Tertius', {
-    speed: 0.08,
-    delay: 0.3,
-    cursor: true,
-    onComplete: () => console.log('Typing Complete')
+  const [hasTyped, setHasTyped] = useState(() => {
+    return sessionStorage.getItem('aboutTypingComplete') === 'true'
   })
 
+  const { elementRef, isComplete } = useGSAPTyping('Christian Carlos Tertius', {
+    speed: 0.01,
+    delay: 0.3,
+    skip: hasTyped,
+    cursor: true,
+    onComplete: () => {
+      console.log('Typing Complete')
+      sessionStorage.setItem('aboutTypingComplete', 'true')
+      setHasTyped(true)
+    }
+  })
+  const [user, setUser] = useState<User | null>(null);
+
   useEffect(() => {
-    fetchUser();
+    setUser(usersData as User)
   }, []);
 
-  const fetchUser = async () => {
-    try {
-      const userData = await authService.me();
-      setUser(userData);
-    } catch (error) {
-      navigate('/login');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) { return (<div className="flex items-center justify-center min-h-screen"> <div>Loading...</div> </div>); }
-  if (!user) { return null; }
+  if (!user) { return }
 
   return (
     <div className="px-5 mt-5 sm:px-0">
-      <div className="my-3 space-y-3">
-        <div>
-          <h1 className="text-4xl font-bold"><span ref={elementRef}></span>
-            {!isComplete && (
-              <span className="inline-block ml-1 text-third">|</span>
-            )}</h1>
 
-          {/* Popover user current role */}
-          <Popover>
-            <PopoverTrigger>
-              <h3 className={`text-lg items-center`}>{user.current_role}</h3>
-            </PopoverTrigger>
-            <PopoverContent>
-              <Input defaultValue={user.current_role} />
-            </PopoverContent>
-          </Popover>
+      <div className="my-3 space-y-3 relative">
+        <div>
+          <h1 className="text-4xl font-bold">
+            <span ref={elementRef}>{hasTyped ? 'Christian Carlos Tertius' : ''}</span>
+            {!isComplete && !hasTyped && (
+              <span className="inline-block ml-1 text-third">|</span>
+            )}
+          </h1>
+          <h3 className={`text-lg items-center`}>Software Engineer | Developer</h3>
         </div>
 
+        <div className="flex gap-2 items-center">
+          <MailIcon className="size-4" />
+          <h1 className="font-thin">{user.email}</h1>
+        </div>
         <div className="flex gap-2 items-center">
           <MapPin className="size-4" />
-          <Popover>
-            <PopoverTrigger>
-              <h1 className="font-thin">{user.current_location}</h1>
-            </PopoverTrigger>
-            <PopoverContent>
-              <Input defaultValue={user.current_location} />
-            </PopoverContent>
-          </Popover>
+          <h1 className="font-thin">{user.current_location}</h1>
         </div>
-
         <div className="flex gap-2 items-center">
           <Computer className="size-4" />
-          <Popover>
-            <PopoverTrigger>
-              <h1 className="font-thin">Software Engineer at lalalala</h1>
-            </PopoverTrigger>
-            <PopoverContent>
-              <Input defaultValue={"Software Engineer at lalalala"} />
-            </PopoverContent>
-          </Popover>
+          <h1 className="font-thin">{user.current_role}</h1>
         </div>
+      </div>
+      <div className="flex flex-col">
+        <p className="text-left">👋 {user.description}</p>
 
+        <OnTheWeb />
       </div>
 
-      {/* Display user description */}
-      <Popover>
-        <PopoverTrigger>
-          <p className="tracking-wider text-left">{user.description}</p>
-        </PopoverTrigger>
-
-        <PopoverContent className="sm:w-[900px]">
-          <Textarea defaultValue={user.description} />
-        </PopoverContent>
-      </Popover>
-
-      <Bio user={user} />
+      <Bio />
       <Work />
-      <ILove />
+      <ILove lovetodo={user.lovetodo} />
       <TopProject />
       <TopBlog />
-      <OnTheWeb />
     </div>
   )
 

@@ -3,28 +3,15 @@ import type { Project } from "@/types";
 import { ChevronRight, Presentation } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import projectsData from '@/datas/projects.json'
 
 const TopProject = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    fetchProject();
+    const top3 = (projectsData as Project[]).slice(-3).reverse()
+    setProjects(top3)
   }, []);
-
-  const fetchProject = async () => {
-    try {
-      const data = await projectService.getAll();
-      setProjects(data.slice(0, 3));
-    } catch (error) {
-      console.log('failed to fetch project', error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  if (loading) { return (<div className="flex items-center justify-center min-h-screen"> <div>Loading...</div> </div>); }
-  if (!projects) { return null; }
 
   return (
     <div className="my-10">
@@ -33,7 +20,7 @@ const TopProject = () => {
         <h1 className="text-2xl font-bold underline underline-offset-8">Projects</h1>
       </div>
 
-      <div className="mt-5 space-y-7 tracking-widest">
+      <div className="mt-5 space-y-7">
         {projects.map((project) => (
           <a href={`${project.link_github}`} target="_blank" className="block rounded-md space-y-2 group cursor-pointer">
             <div className="space-y-1">

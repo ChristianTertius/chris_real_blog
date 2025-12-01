@@ -1,26 +1,37 @@
-import { Link } from "lucide-react"
-import { useGSAPTyping } from "../hooks/useGSAPTyping"
+import type { Blog } from "@/types";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router"
+import blogsData from '@/datas/blogs.json'
+import { ArrowLeft } from "lucide-react";
 
 const BlogDetail = () => {
-  const { elementRef, isCompleted } = useGSAPTyping('Why i choose neovim instead of VSCode for fullstack development?', {
-    speed: 0.03,
-    delay: 0.3,
-    cursor: true,
-    onComplete: () => console.log('Typing Complete')
-  })
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [blog, setBlog] = useState<Blog | null>(null)
+
+  useEffect(() => {
+    const foundBlog = blogsData.find((b: Blog) => b.id === id)
+    if (foundBlog) {
+      setBlog(foundBlog as Blog)
+    } else {
+      navigate('/blogs')
+    }
+  }, [id, navigate])
 
   return (
     <div className="mt-5">
-      <h1 className="text-4xl font-bold">
-        <span ref={elementRef}></span>
-        {!isCompleted && (
-          <span className="inline-block ml-1 text-third">|</span>
-        )}
-      </h1>
-      <p className="opacity-60 mt-2">June, 2025</p>
+      <button
+        onClick={() => navigate('/blogs')}
+        className="flex items-center cursor-pointer gap-2 mb-5 hover:text-third transition-all"
+      >
+        <ArrowLeft className="size-5" />
+        Back to Blogs
+      </button>
+      <h1 className="text-2xl">{blog?.title}</h1>
+      <p className="opacity-60">{blog?.date}</p>
 
-      <div className="my-5 rounded-md duration-50 flex gap-2 items-center justify-between group">
-
+      <div className="text-justify my-5 rounded-md duration-50 flex gap-2 items-center justify-between group">
+        {blog?.content}
       </div>
 
 

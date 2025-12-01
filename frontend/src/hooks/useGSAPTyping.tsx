@@ -8,6 +8,7 @@ gsap.registerPlugin(TextPlugin)
 interface UseGSAPTypingOptions {
   speed?: number
   delay?: number
+  skip?: boolean
   cursor?: boolean
   cursorChar?: string
   onComplete?: () => void

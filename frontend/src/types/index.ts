@@ -10,15 +10,6 @@ export interface User {
   email_verified_at?: string
   created_at: string;
   updated_at: string;
-  //             $table -> string('name');
-  // $table -> string('email') -> unique();
-  // $table -> string('fullname');
-  // $table -> string('current_role');
-  // $table -> string('current_location');
-  // $table -> text('description');
-  // $table -> text('lovetodo');
-  // $table -> timestamp('email_verified_at') -> nullable();
-  // $table -> string('password');
 }
 
 export interface LoginRequest {
@@ -52,7 +43,7 @@ export interface Work {
   id: number;
   role: string;
   place: string;
-  description: string;
+  description: string[];
   techs: string[];
   created_at: string;
   updated_at: string;
@@ -65,7 +56,6 @@ export interface WorkRequest {
   techs: string[];
 }
 
-// project types
 export interface Project {
   id: number;
   name: string;
@@ -89,7 +79,17 @@ export interface ProjectRequest {
   techs: string[];
 }
 
-// api response wrapper
+export interface Blog {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  date: string;
+  content: string;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface ApiResponse<T> {
   data: T;
   message?: string;

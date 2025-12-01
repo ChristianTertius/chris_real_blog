@@ -1,88 +1,113 @@
-import { Link, useNavigate } from "react-router";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { Link } from "react-router";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { useGSAPTyping } from "../hooks/useGSAPTyping";
-import { PlusIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import type { User } from "@/types";
-import { authService } from "@/services/authService";
+import type { Blog } from "@/types";
+import blogsData from '@/datas/blogs.json'
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Blog = () => {
   useDocumentTitle("Blog - Chris")
 
-  const { elementRef, isComplete } = useGSAPTyping('Blog', {
-    speed: 0.08,
-    delay: 0.3,
-    cursor: true,
-    onComplete: () => console.log('Typing Complete')
+  const [hasTyped, setHasTyped] = useState(() => {
+    return sessionStorage.getItem('blogTypingComplete') === 'true'
   })
 
-
-  // take user email
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  const { elementRef, isComplete } = useGSAPTyping('Blog', {
+    speed: 0.01,
+    delay: 0.3,
+    cursor: true,
+    skip: hasTyped,
+    onComplete: () => {
+      console.log('Typing Complete')
+      sessionStorage.setItem('blogTypingComplete', 'true')
+      setHasTyped(true)
+    }
+  })
+  const [blogs, setBlog] = useState<Blog[]>([])
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 15
 
   useEffect(() => {
-    fetchUser();
+    setBlog(blogsData as Blog[])
   }, []);
 
-  const fetchUser = async () => {
-    try {
-      const userData = await authService.me();
-      setUser(userData);
-    } catch (error) {
-      // Kalau gagal (token invalid), redirect ke login
-      navigate('/login');
-    } finally {
-      setLoading(false);
-    }
-  };
+  const totalPages = Math.ceil(blogs.length / blogsPerPage);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div>Loading...</div>
-      </div>
-    );
+  const indexOfLastBlog = currentPage * blogsPerPage
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage
+  const currentBlog = blogs.slice(indexOfFirstBlog, indexOfLastBlog)
+
+  const goToNextPage = () => {
+    setCurrentPage(prev => Math.min(prev + 1, totalPages))
   }
 
-  if (!user) {
-    return null;
+  const goToPrevPage = () => {
+    setCurrentPage(prev => Math.max(prev - 1, 1))
   }
+
+  const goToPage = (pageNumber: number) => {
+    setCurrentPage(pageNumber)
+  }
+
   return (
     <div className="px-5 mt-5 sm:px-0">
       <div className="flex items-center justify-between">
         <h1 className="text-4xl font-bold">
-          <span ref={elementRef}></span>
-          {!isComplete && (
+          <span ref={elementRef}>{hasTyped ? 'Blog' : ''}</span>
+          {!isComplete && !hasTyped && (
             <span className="inline-block ml-1 text-third">|</span>
           )}
         </h1>
-        <div className="flex items-center justify-between gap-2">
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Link to={'/blog/addnewblog'}>
-                <PlusIcon className="cursor-pointer hover:text-third" />
-              </Link>
-            </TooltipTrigger>
+      </div>
 
-            <TooltipContent side="bottom">
-              <p>Add new Blog</p>
-            </TooltipContent>
-          </Tooltip>
+
+      {currentBlog.map((blog) => (
+        <div className="my-5 rounded-md duration-50 flex gap-2 items-center justify-between group flex-wrap">
+          <Link to={`/blogs/${blog.id}`} className="text-lg group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">{blog.title}</Link>
+          <p className="group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">{blog.date}</p>
         </div>
-      </div>
+      ))}
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-2 mt-10">
+          <button
+            onClick={goToPrevPage}
+            disabled={currentPage === 1}
+            className="p-2 rounded-md border border-secondary/20 hover:bg-third/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          >
+            <ChevronLeft className="size-5" />
+          </button>
 
+          {/* Page Numbers */}
+          <div className="flex gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+              <button
+                key={pageNum}
+                onClick={() => goToPage(pageNum)}
+                className={`px-4 py-2 rounded-md border transition-all ${currentPage === pageNum
+                  ? 'bg-third text-white border-third'
+                  : 'border-secondary/20 hover:bg-third/10'
+                  }`}
+              >
+                {pageNum}
+              </button>
+            ))}
+          </div>
 
-      <div className="my-5 rounded-md duration-50 flex gap-2 items-center justify-between group flex-wrap">
-        <Link to="/blog/blogdetail" className="text-lg group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">Why i choose neovim instead of VSCode for fullstack development?</Link>
-        <p className="group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">June, 2025</p>
-      </div>
+          <button
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages}
+            className="p-2 rounded-md border border-secondary/20 hover:bg-third/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          >
+            <ChevronRight className="size-5" />
+          </button>
+        </div>
+      )}
+
+      <p className="text-center mt-5 text-sm opacity-70">
+        Showing {indexOfFirstBlog + 1} - {Math.min(indexOfLastBlog, blogs.length)} of {blogs.length} blogs
+      </p>
     </div>
   )
 }
