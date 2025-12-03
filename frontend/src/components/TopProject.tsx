@@ -1,4 +1,3 @@
-import { projectService } from "@/services/projectService";
 import type { Project } from "@/types";
 import { ChevronRight, Presentation } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -7,7 +6,6 @@ import projectsData from '@/datas/projects.json'
 
 const TopProject = () => {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const top3 = (projectsData as Project[]).slice(-3).reverse()
     setProjects(top3)

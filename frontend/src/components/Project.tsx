@@ -77,16 +77,18 @@ const Project = () => {
               </div>
               <p className="opacity-80">{project.type} • {project.year}</p>
             </div>
-            <Tooltip >
-              <TooltipTrigger asChild>
-                <a href={`${project.link_website}`} target="_blank" >
-                  <ArrowUpRight className="hover:text-third" />
-                </a>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Go to the website</p>
-              </TooltipContent>
-            </Tooltip>
+            {project.link_website && (
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a href={`${project.link_website}`} target="_blank" >
+                    <ArrowUpRight className="hover:text-third" />
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Go to the website</p>
+                </TooltipContent>
+              </Tooltip>
+            )}
           </div>
 
           <div>

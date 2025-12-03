@@ -5,7 +5,7 @@
     "year": 2025,
     "achievement": "Website for you manage your inventory like stocks, products, finance, and many more with realtime notification",
     "link_github": "https://github.com/Xynno22/InventoryManagement",
-    "link_website": "https://stocksense.site/",
+    "link_website": "",
     "techs": [
       "Laravel",
       "Tailwind",
@@ -35,7 +35,7 @@
     "year": 2024,
     "achievement": "Built a collaborative task management system with real-time notifications, team collaboration features, and project tracking. Used by 50+ companies for project management.",
     "link_github": "https://github.com/changjli/pisonz",
-    "link_website": "https://pisonzstore.com",
+    "link_website": "",
     "techs": [
       "Laravel",
       "Tailwind",
@@ -43,45 +43,3 @@
     ]
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
