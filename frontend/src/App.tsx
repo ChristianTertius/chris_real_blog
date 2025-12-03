@@ -17,7 +17,7 @@ function App() {
   }, [location.pathname])
 
   return (
-    <div className='flex flex-col min-h-screen max-w-4xl mx-auto bg-main text-secondary'>
+    <div className='flex flex-col min-h-screen max-w-4xl mx-auto text-main'>
       <Navbar />
       <div className="flex-1">
         <Routes>

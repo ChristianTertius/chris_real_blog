@@ -1,4 +1,4 @@
-import { BicepsFlexed, PlusIcon } from "lucide-react"
+import { BicepsFlexed } from "lucide-react"
 import WorkCard from "./Work/WorkCard"
 
 const Work = () => {

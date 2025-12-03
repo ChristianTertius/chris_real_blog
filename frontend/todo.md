@@ -19,5 +19,6 @@
 [✅] ganti foto judul web
 [✅] projects order by date
 [✅] blog detail
-[] light mode & dark mode
-[] translate to indo (with checkbox)
+[✅] light mode & dark mode
+[] hapus color nda penting
+[] fix color bug

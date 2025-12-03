@@ -2,12 +2,14 @@
   {
     "role": "Fullstack Developer Intern",
     "place": "PT Prodia Widyahusada Tbk",
+    "date": "Feb 2024 - Feb 2025",
     "description": [
       "- Developed and maintained three internal systems, collaborating with IT teams and optimizing databases for better performance",
       "- Independently developed a referral application from scratch, handling frontend, backend, and database design, successfully deployed for internal use",
       "- Assisted in debugging, testing, and implementing new features across systems, enhancing internal operations and user experience."
     ],
     "techs": [
+      "PHP",
       "Laravel",
       "CodeIgniter",
       "Queue",

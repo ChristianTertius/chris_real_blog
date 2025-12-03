@@ -43,6 +43,7 @@ export interface Work {
   id: number;
   role: string;
   place: string;
+  date: string;
   description: string[];
   techs: string[];
   created_at: string;

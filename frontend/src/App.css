@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-main: #252525;
+  /* --color-main: #252525; */
   --color-secondary: #f0e7db;
   --color-third: #c19c60;
   --font-family-sans: 'Inter', sans-serif;
@@ -129,7 +129,7 @@ body::-webkit-scrollbar {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: #252525;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);

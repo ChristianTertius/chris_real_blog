@@ -54,15 +54,15 @@ const About = () => {
 
         <div className="flex gap-2 items-center">
           <MailIcon className="size-4" />
-          <h1 className="font-thin">{user.email}</h1>
+          <h1 className="">{user.email}</h1>
         </div>
         <div className="flex gap-2 items-center">
           <MapPin className="size-4" />
-          <h1 className="font-thin">{user.current_location}</h1>
+          <h1 className="">{user.current_location}</h1>
         </div>
         <div className="flex gap-2 items-center">
           <Computer className="size-4" />
-          <h1 className="font-thin">{user.current_role}</h1>
+          <h1 className="">{user.current_role}</h1>
         </div>
       </div>
       <div className="flex flex-col">
