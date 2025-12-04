@@ -51,9 +51,9 @@ const Blog = () => {
   }
 
   return (
-    <div className="px-5 mt-5 sm:px-0">
+    <div className="px-5 sm:mt-5 sm:px-0">
       <div className="flex items-center justify-between">
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-xl sm:text-4xl font-bold">
           <span ref={elementRef}>{hasTyped ? 'Blog' : ''}</span>
           {!isComplete && !hasTyped && (
             <span className="inline-block ml-1 text-third">|</span>
@@ -63,12 +63,12 @@ const Blog = () => {
 
 
       {currentBlog.map((blog) => (
-        <Link to={`/blogs/${blog.id}`} className="text-sm flex-wrap sm:text-lg my-3 flex justify-between group items-center group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">
+        <Link to={`/blogs/${blog.id}`} className="text-sm flex-wrap sm:text-lg my-3 flex items-start justify-start sm:justify-between sm:flex-row flex-col group sm:items-center group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">
           <h1 className="group-hover:text-third group-hover:underline">
             {blog.title}
           </h1>
 
-          <p className="group-hover:text-third text-sm transition-all duration-50 group-hover:underline underline-offset-10">{blog.date}</p>
+          <p className="group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">{blog.date}</p>
 
         </Link>
       ))}

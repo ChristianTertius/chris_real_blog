@@ -30,10 +30,10 @@ const TopProject = () => {
         {projects.map((project) => (
           <a href={`${project.link_github}`} target="_blank" className="block rounded-md space-y-2 group cursor-pointer">
             <div className="space-y-1">
-              <h1 className="text-xl group-hover:text-third transition-colors duration-150">{project.name}</h1>
-              <p className="opacity-80 text-sm">{project.type} • {project.year}</p>
+              <h1 className="text-lg font-semibold sm:text-xl group-hover:text-third transition-colors duration-150">{project.name}</h1>
+              <p className="opacity-80 text-sm sm:text-sm">{project.type} • {project.year}</p>
             </div>
-            <p className="line-clamp-2">{project.achievement}</p>
+            <p className="line-clamp-2 text-sm sm:text-base">{project.achievement}</p>
           </a>
         ))}
 

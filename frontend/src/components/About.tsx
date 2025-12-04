@@ -38,9 +38,9 @@ const About = () => {
   if (!user) { return }
 
   return (
-    <div className="px-5 mt-5 sm:px-0">
+    <div className="px-5 sm:mt-5 sm:px-0">
 
-      <div className="my-3 space-y-3 relative">
+      <div className="sm:my-3 space-y-3 relative">
         <div>
           <h1 className="text-xl sm:text-4xl font-bold">
             <span ref={elementRef}>{hasTyped ? 'Christian Carlos Tertius' : ''}</span>
@@ -66,7 +66,7 @@ const About = () => {
           </div>
         )}
       </div>
-      <div className="flex flex-col text-sm sm:text-xs leading-6">
+      <div className="flex flex-col text-xs sm:text-base leading-6">
         <p className="text-left">👋 {user.description}</p>
 
         <OnTheWeb />

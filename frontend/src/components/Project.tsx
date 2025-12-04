@@ -58,9 +58,9 @@ const Project = () => {
   }
 
   return (
-    <div className="px-5 mt-5 sm:px-0">
+    <div className="px-5 sm:mt-5 sm:px-0 sm:block sm:gap-0">
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-xl sm:text-4xl font-bold">
           <span ref={elementRef}>{hasTyped ? 'Project' : ''}</span>
           {!isComplete && !hasTyped && (
             <span className="inline-block ml-1 text-third">|</span>
@@ -73,9 +73,9 @@ const Project = () => {
           <div className="flex justify-between">
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-3xl font-extrabold group-hover:text-third transition-all duration-150">{project.name}</h1>
+                <h1 className="text-xl sm:text-3xl font-extrabold group-hover:text-third transition-all duration-150">{project.name}</h1>
               </div>
-              <p className="opacity-80">{project.type} • {project.year}</p>
+              <p className="text-sm sm:text-base opacity-80">{project.type} • {project.year}</p>
             </div>
             {project.link_website && (
               <Tooltip>
@@ -92,16 +92,18 @@ const Project = () => {
           </div>
 
           <div>
-            <h1 className="text-xl font-bold mb-2">Achievement</h1>
-            {project.achievement}
+            <h1 className="sm:text-xl font-bold mb-2">Achievement</h1>
+            <p className="text-sm sm:text-base line-clamp-3">
+              {project.achievement}
+            </p>
           </div>
 
           <div>
-            <h1 className="text-xl font-bold mb-2">Technologies</h1>
+            <h1 className="sm:text-xl font-bold mb-2">Technologies</h1>
             <div className="flex justify-between items-center ">
               <div className="flex gap-2 flex-wrap">
                 {project.techs.map((tech) => (
-                  <p className="tracking-wider border border-third/20 p-1 px-2 rounded-full text-sm">{tech}</p>
+                  <p className="tracking-wider border border-third/20 p-1 px-2 rounded-full text-xs sm:text-sm">{tech}</p>
                 ))}
               </div>
 

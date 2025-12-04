@@ -32,8 +32,8 @@
     [] project padding
     [] project text-size
     [] project techs
-    [] About title per page mobile view
-        [] semuanya
-    [] Project title per page mobile view
+    [✅] About title per page mobile view
+        [✅] semuanya
+    [✅] Project title per page mobile view
     [] Blog title per page mobile view
 [] font family jadi local
