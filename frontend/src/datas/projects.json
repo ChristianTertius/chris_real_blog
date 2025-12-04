@@ -57,7 +57,7 @@
   {
     "name": "Yamada Motorcycle",
     "type": "Motorcycle Store",
-    "year": 2022,
+    "year": 2021,
     "achievement": "Static web created for Human Computer Interaction for mid exam evaluation",
     "link_github": "https: //christiantertius.github.io/yamada-motorcycle/",
     "techs": [
@@ -78,6 +78,18 @@
       "Tailwind CSS",
       "GSAP",
       "ScrollTrigger"
+    ]
+  },
+  {
+    "name": "StreamFlix",
+    "type": "Early Frontend Project",
+    "year": 2022,
+    "achievement": "One of my first React projects - a movie discovery interface demonstrating fundamental skills in component architecture, API integration, and responsive design. Built during my learning journey to understand modern frontend development patterns.",
+    "link_github": "https://github.com/ChristianTertius/Movie",
+    "techs": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
     ]
   }
 ]
