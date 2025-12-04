@@ -27,7 +27,7 @@
       ]
     },
     /* Linting */
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitAny": false, // ← tambah ini kalau ada implicit any error

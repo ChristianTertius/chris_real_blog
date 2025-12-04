@@ -1,15 +1,14 @@
 export interface User {
-  id: number;
-  username: string;
+  name: string;
   email: string;
   fullname: string;
   current_role: string;
   current_location: string;
   description: string;
   lovetodo: string;
-  email_verified_at?: string
-  created_at: string;
-  updated_at: string;
+  email_verified_at: string;
+  password: string;
+  remember_token: string;
 }
 
 export interface LoginRequest {
@@ -81,15 +80,13 @@ export interface ProjectRequest {
 }
 
 export interface Blog {
-  id: number;
+  id: string;
   title: string;
   description: string;
   image: string;
   date: string;
   content: string;
-  content_image: string;
-  created_at: string;
-  updated_at: string;
+  content_image?: string;
 }
 
 export interface ApiResponse<T> {

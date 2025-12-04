@@ -9,7 +9,6 @@ import TopBlog from "./TopBlog"
 import { useGSAPTyping } from "../hooks/useGSAPTyping"
 import { useEffect, useState } from "react"
 import type { User } from "@/types"
-import Footer from "./Footer"
 import usersData from '@/datas/user.json'
 
 const About = () => {
