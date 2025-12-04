@@ -7,14 +7,16 @@ import projectsData from '@/datas/projects.json'
 const TopProject = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   useEffect(() => {
-    const latestYear = Math.max(...(projectsData as Project[]).map(p => p.year));
+    // Sort by year-month (newest first)
+    const sortedProjects = (projectsData as Project[]).sort((a, b) => {
+      const dateA = a.year * 100 + a.month;
+      const dateB = b.year * 100 + b.month;
+      return dateB - dateA;
+    });
 
-    const latestProjects = (projectsData as Project[])
-      .filter(p => p.year === latestYear)
-      .slice(-3)
-      .reverse();
-
-    setProjects(latestProjects);
+    // Take top 3 newest projects
+    const top3 = sortedProjects.slice(0, 3);
+    setProjects(top3);
   }, []);
 
   return (
@@ -31,7 +33,7 @@ const TopProject = () => {
               <h1 className="text-xl group-hover:text-third transition-colors duration-150">{project.name}</h1>
               <p className="opacity-80 text-sm">{project.type} • {project.year}</p>
             </div>
-            <p>{project.achievement}</p>
+            <p className="line-clamp-2">{project.achievement}</p>
           </a>
         ))}
 

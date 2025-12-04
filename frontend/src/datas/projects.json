@@ -1,7 +1,37 @@
 [
   {
+    "name": "Golang Authentication Service",
+    "type": "Backend API Service",
+    "year": 2025,
+    "month": 3,
+    "achievement": "Secure REST API built with Go featuring JWT-based authentication with access and refresh token mechanism, bcrypt password hashing, and middleware-based authorization. Implemented clean architecture with repository pattern, comprehensive request validation, and structured error handling following Go best practices.",
+    "link_github": "https://github.com/ChristianTertius/go-jwt.git",
+    "techs": [
+      "Go",
+      "Go-Chi",
+      "PostgreSQL",
+      "JWT"
+    ]
+  },
+  {
+    "name": "Laravel Task Management API",
+    "type": "Project Management Backend",
+    "year": 2025,
+    "month": 3,
+    "achievement": "Comprehensive task management REST API with Laravel Sanctum. Implements repository pattern, service layer architecture, role-based permissions, real-time notifications via queues, and efficient database queries with eager loading. Built with API resources for consistent JSON responses and comprehensive validation.",
+    "link_github": "https://github.com/ChristianTertius/laravel-rest-api",
+    "techs": [
+      "Laravel 12",
+      "Sanctum",
+      "PostgreSQL",
+      "Redis",
+      "PHP 8.2"
+    ]
+  },
+  {
     "name": "StockSense",
     "type": "Inventory Management System",
+    "month": 7,
     "year": 2025,
     "achievement": "Website for you manage your inventory like stocks, products, finance, and many more with realtime notification",
     "link_github": "https://github.com/Xynno22/InventoryManagement",
@@ -19,6 +49,7 @@
     "name": "Chatty",
     "type": "Realtime Chat Web Application",
     "year": 2025,
+    "month": 6,
     "achievement": "Website for you to chat with all of your friend with real time notification, and online users indicator",
     "link_github": "https://github.com/ChristianTertius/chatty",
     "techs": [
@@ -30,28 +61,17 @@
     ]
   },
   {
-    "name": "Pisonz",
+    "name": "Pisonz Store",
     "type": "Online Top Up Game Store",
-    "year": 2024,
-    "achievement": "Built a collaborative task management system with real-time notifications, team collaboration features, and project tracking. Used by 50+ companies for project management.",
+    "year": 2025,
+    "month": 5,
+    "achievement": "Built a collaborative task management system with real-time notifications, team collaboration features, and project tracking",
     "link_github": "https://github.com/changjli/pisonz",
     "link_website": "",
     "techs": [
       "Laravel",
       "Tailwind",
       "Bootstrap"
-    ]
-  },
-  {
-    "name": "Golang REST API",
-    "type": "Realtime Chat Web Application",
-    "year": 2025,
-    "achievement": "REST API using golang + JWT authentication with best practice implementation",
-    "link_github": "https://github.com/ChristianTertius/go-jwt.git",
-    "techs": [
-      "Golang",
-      "Go-Chi",
-      "Postgres"
     ]
   },
   {

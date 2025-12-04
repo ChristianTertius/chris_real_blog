@@ -61,6 +61,7 @@ export interface Project {
   name: string;
   type: string;
   year: number;
+  month?: number;
   achievement: string;
   link_github: string;
   link_website: string;

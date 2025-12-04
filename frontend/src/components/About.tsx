@@ -59,10 +59,12 @@ const About = () => {
           <MapPin className="size-4" />
           <h1 className="">{user.current_location}</h1>
         </div>
-        <div className="flex gap-2 items-center">
-          <Computer className="size-4" />
-          <h1 className="">{user.current_role}</h1>
-        </div>
+        {user.current_role && (
+          <div className="flex gap-2 items-center">
+            <Computer className="size-4" />
+            <h1 className="">{user.current_role}</h1>
+          </div>
+        )}
       </div>
       <div className="flex flex-col">
         <p className="text-left">👋 {user.description}</p>
