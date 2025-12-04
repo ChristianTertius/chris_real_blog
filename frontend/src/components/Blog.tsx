@@ -63,13 +63,13 @@ const Blog = () => {
 
 
       {currentBlog.map((blog) => (
-        <Link to={`/blogs/${blog.id}`} className="text-lg my-3 flex justify-between group items-center group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">
+        <Link to={`/blogs/${blog.id}`} className="text-sm flex-wrap sm:text-lg my-3 flex justify-between group items-center group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">
           <h1 className="group-hover:text-third group-hover:underline">
             {blog.title}
           </h1>
-          <div className="rounded-md duration-50 flex gap-2 items-center justify-between group flex-wrap">
-            <p className="group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">{blog.date}</p>
-          </div>
+
+          <p className="group-hover:text-third text-sm transition-all duration-50 group-hover:underline underline-offset-10">{blog.date}</p>
+
         </Link>
       ))}
       {/* Pagination Controls */}

@@ -19,10 +19,10 @@ const TopBlog = () => {
         <h1 className="text-2xl font-bold underline underline-offset-8">Blogs</h1>
       </div>
       {blogs.map((blog) => (
-        <a href="/blog/blogDetail" className="group mt-5 flex justify-between items-center flex-wrap">
-          <h1 className="text-lg group-hover:text-third transition-all duration-150">{blog.title}</h1>
-          <p className="group-hover:text-third transition-all duration-150">{blog.date}</p>
-        </a>
+        <Link to={`/blogs/${blog.id}`} className="group mt-5 flex justify-between items-center flex-wrap">
+          <h1 className="text-sm sm:text-base group-hover:text-third transition-all duration-150">{blog.title}</h1>
+          <p className="text-xs text-white/50 sm:text-white sm:text-base group-hover:text-third transition-all duration-150">{blog.date}</p>
+        </Link>
       ))}
       <Link to="/blogs" className="text-third text-shadow-amber-950 text-sm items-center mt-5 flex gap-1 group hover:underline underline-offset-8">
         See More

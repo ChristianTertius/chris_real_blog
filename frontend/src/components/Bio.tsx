@@ -17,9 +17,13 @@ const Bio: React.FC = () => {
         <PinIcon className="size-6" />
         <h1 className="text-2xl font-bold underline underline-offset-8">Bio</h1>
       </div>
-      <div className="mt-5 space-y-2">
+      <div className="mt-5 space-y-3">
         {bios.map((bio) => (
-          <h1 key={bio.id}>{bio.year} | {bio.description}</h1>
+          <div className="flex gap-2 items-top">
+            <h1 key={bio.id} className="text-sm sm:text-base">{bio.year}</h1>
+            <div>|</div>
+            <h1 key={bio.id} className="text-sm sm:text-base">{bio.description}</h1>
+          </div>
         ))}
       </div>
     </div>

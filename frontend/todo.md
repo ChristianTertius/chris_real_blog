@@ -24,4 +24,11 @@
     [✅] download cv light & darkmode
     [✅] workcard ligt & darkmode
     [✅] project light & darkmode
-[] fill blog detail
+[✅] fill blog detail
+[] mobile fix:
+    [✅] work - ganti pake bullet
+    [✅] minesin padding work
+    [✅] blog detail
+    [] project
+    [] techs ui fix
+[] font family jadi local

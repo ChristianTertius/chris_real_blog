@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="p-5 text-center text-sm">© 2025 Christian Carlos Tertius | Created with ♥ in the West Jakarta</div>
+    <div className="p-5 text-center text-xs sm:text-sm">© 2025 Christian Carlos Tertius | Created with ♥ in the West Jakarta</div>
   )
 }
 

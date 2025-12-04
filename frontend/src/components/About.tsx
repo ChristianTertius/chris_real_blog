@@ -79,7 +79,6 @@ const About = () => {
       <TopBlog />
     </div>
   )
-
 }
 
 export default About

@@ -20,7 +20,7 @@ const BlogDetail = () => {
   }, [id, navigate])
   useDocumentTitle(blog ? `Blog - ${blog.title} - Chris` : "Blog - Chris");
   return (
-    <div className="mt-5">
+    <div className="mt-5 p-5 sm:p-0">
       <button
         onClick={() => navigate('/blogs')}
         className="flex items-center cursor-pointer gap-2 mb-5 hover:text-third transition-all"
@@ -31,9 +31,9 @@ const BlogDetail = () => {
       <h1 className="text-2xl font-bold">{blog?.title}</h1>
       <p className="opacity-60">{blog?.date}</p>
 
-      <div className="text-justify my-5 rounded-md duration-50 gap-2 items-center justify-between group text-base/loose">
+      <div className="text-left sm:text-justify my-5 rounded-md duration-50 gap-2 items-center justify-between group text-base/loose">
         <h1 className="text-third inline-block text-lg">Summary:</h1> <br />
-        <p className="mb-3">
+        <p className="mb-3 text-sm sm:text-base leading-8">
           {blog?.content}
         </p>
         {blog?.content_image && (
