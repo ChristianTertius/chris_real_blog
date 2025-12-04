@@ -20,5 +20,8 @@
 [✅] projects order by date
 [✅] blog detail
 [✅] light mode & dark mode
-[] hapus color nda penting
-[] fix color bug
+[✅] border fix:
+    [✅] download cv light & darkmode
+    [✅] workcard ligt & darkmode
+    [✅] project light & darkmode
+[] fill blog detail

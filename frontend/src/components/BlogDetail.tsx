@@ -27,15 +27,18 @@ const BlogDetail = () => {
         <ArrowLeft className="size-5" />
         Back to Blogs
       </button>
-      <h1 className="text-2xl">{blog?.title}</h1>
+      <h1 className="text-2xl font-bold">{blog?.title}</h1>
       <p className="opacity-60">{blog?.date}</p>
 
-      <div className="text-justify my-5 rounded-md duration-50 flex gap-2 items-center justify-between group">
-        {blog?.content}
+      <div className="text-justify my-5 rounded-md duration-50 gap-2 items-center justify-between group text-base/loose">
+        <h1 className="text-third inline-block text-lg">Summary:</h1> <br />
+        <p className="mb-3">
+          {blog?.content}
+        </p>
+        {blog?.content_image && (
+          <img src={`/${blog?.content_image}`} alt="content_image" />
+        )}
       </div>
-
-
-
     </div>
   )
 }

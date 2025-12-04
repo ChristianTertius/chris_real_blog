@@ -87,6 +87,7 @@ export interface Blog {
   image: string;
   date: string;
   content: string;
+  content_image: string;
   created_at: string;
   updated_at: string;
 }

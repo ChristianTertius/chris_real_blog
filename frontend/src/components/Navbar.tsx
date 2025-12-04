@@ -34,11 +34,11 @@ const Navbar = () => {
       <div className="gap-5 flex">
         <Link to="/" className={`hover:text-third transition-colors duration-150 hover:underline underline-offset-10 decoration-2 ${location.pathname == '/' ? 'underline underline-offset-10 text-third' : ''}`}>About</Link>
         <Link to="/projects" className={`hover:text-third transition-colors duration-150 hover:underline underline-offset-10 decoration-2 ${location.pathname == '/projects' ? 'underline underline-offset-10 text-third' : ''}`}>Project</Link>
-        <Link to="/blogs" className={`hover:text-third transition-colors duration-150 hover:underline underline-offset-10 decoration-2 ${location.pathname == '/blogs' ? 'underline underline-offset-10 text-third' : ''}`}>Blog</Link>
+        <Link to="/blogs" className={`hover:text-third transition-colors duration-150 hover:underline underline-offset-10 decoration-2 ${location.pathname.startsWith('/blogs') ? 'underline underline-offset-10 text-third' : ''}`}>Blog</Link>
       </div>
       <button
         onClick={toggleDarkMode}
-        className="relative p-2 rounded-lg cursor-pointer dark:bg-gray-800 hover:bg-third/70 dark:hover:bg-gray-700 transition-colors duration-200"
+        className="relative p-2 rounded-lg cursor-pointer hover:bg-third/70 dark:hover:bg-gray-700 transition-colors duration-200"
         aria-label="Toggle dark mode"
       >
         <div className="relative w-6 h-6">

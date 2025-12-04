@@ -69,7 +69,7 @@ const Project = () => {
       </div>
 
       {currentProject.map((project) => (
-        <div className="block my-5 hover:bg-third/5 space-y-5 border border-secondary/20 p-5 rounded-md group hover:border-third transition-all duration-150">
+        <div className="block my-5 hover:bg-third/5 space-y-5 border border-third/20 p-5 rounded-md group hover:border-third transition-all duration-150">
           <div className="flex justify-between">
             <div>
               <div className="flex items-center gap-2">
@@ -101,7 +101,7 @@ const Project = () => {
             <div className="flex justify-between items-center ">
               <div className="flex gap-2 flex-wrap">
                 {project.techs.map((tech) => (
-                  <p className="tracking-wider border border-secondary/30 p-1 px-2 rounded-full text-sm">{tech}</p>
+                  <p className="tracking-wider border border-third/20 p-1 px-2 rounded-full text-sm">{tech}</p>
                 ))}
               </div>
 

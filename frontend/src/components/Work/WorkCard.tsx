@@ -16,7 +16,7 @@ const WorkCard = () => {
   return (
     <>
       {works.map((work) => (
-        <div className="border border-[#252525]/10 dark:border-third/20 rounded-sm p-6">
+        <div className="border border-third/20 dark:border dark:border-third/30 rounded-sm p-6">
           <div className="flex gap-2 items-center">
             <h1 className="text-xl">{work.role}</h1>
           </div>
@@ -28,7 +28,7 @@ const WorkCard = () => {
             ))}
             <div className="flex gap-2 mt-5 justify-end flex-wrap">
               {work.techs.map((tech) => (
-                <div className="border rounded-full px-2 text-sm">{tech}</div>
+                <div className="border border-[#252525]/40 dark:border-third/30 rounded-full px-2 text-sm">{tech}</div>
               ))}
             </div>
           </div>
