@@ -14,8 +14,8 @@ const Bio: React.FC = () => {
   return (
     <div className="mb-10">
       <div className="flex items-center gap-2">
-        <PinIcon className="sm:size-6" />
-        <h1 className="text-2xl font-bold underline underline-offset-8">Bio</h1>
+        <PinIcon className="sm:size-6 size-5" />
+        <h1 className="text-xl sm:text-2xl font-bold underline underline-offset-8">Bio</h1>
       </div>
       <div className="mt-5 space-y-3">
         {bios.map((bio) => (

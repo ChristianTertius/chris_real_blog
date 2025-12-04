@@ -29,11 +29,14 @@
     [✅] work - ganti pake bullet
     [✅] minesin padding work
     [✅] blog detail padding
-    [] project padding
-    [] project text-size
-    [] project techs
+    [✅] project padding
+    [✅] project text-size
+    [✅] project techs
     [✅] About title per page mobile view
         [✅] semuanya
     [✅] Project title per page mobile view
-    [] Blog title per page mobile view
+    [✅] Blog title per page mobile view
+    [] Blog detail mt 
+    [] about me description gap
+    [] section heading fix
 [] font family jadi local

@@ -66,7 +66,7 @@ const About = () => {
           </div>
         )}
       </div>
-      <div className="flex flex-col text-xs sm:text-base leading-6">
+      <div className="flex flex-col mt-2 sm:mt-0 text-xs sm:text-base leading-6">
         <p className="text-left">👋 {user.description}</p>
 
         <OnTheWeb />

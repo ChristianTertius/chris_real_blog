@@ -15,8 +15,8 @@ const TopBlog = () => {
   return (
     <div className="my-10">
       <div className="flex items-center gap-2 ">
-        <ExternalLink className="size-6" />
-        <h1 className="text-2xl font-bold underline underline-offset-8">Blogs</h1>
+        <ExternalLink className="size-5 sm:size-6" />
+        <h1 className="text-xl sm:text-2xl font-bold underline underline-offset-8">Blogs</h1>
       </div>
       {blogs.map((blog) => (
         <Link to={`/blogs/${blog.id}`} className="group mt-5 flex justify-between items-center flex-wrap">

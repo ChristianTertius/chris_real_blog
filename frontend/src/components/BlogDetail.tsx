@@ -20,10 +20,10 @@ const BlogDetail = () => {
   }, [id, navigate])
   useDocumentTitle(blog ? `Blog - ${blog.title} - Chris` : "Blog - Chris");
   return (
-    <div className="mt-5 p-5 sm:p-0">
+    <div className="sm:mt-5 px-5 sm:p-0">
       <button
         onClick={() => navigate('/blogs')}
-        className="flex items-center cursor-pointer gap-2 mb-5 hover:text-third transition-all"
+        className="flex items-center cursor-pointer gap-2 mb-5 hover:text-third transition-all text-sm sm:text-base"
       >
         <ArrowLeft className="size-5" />
         Back to Blogs

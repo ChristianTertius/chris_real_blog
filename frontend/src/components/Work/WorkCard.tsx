@@ -16,7 +16,7 @@ const WorkCard = () => {
   return (
     <>
       {works.map((work) => (
-        <div className="sm:border-2 sm:border-third/20 dark:sm:border-third/30 rounded-sm p-1 sm:p-6">
+        <div className="border-2 sm:border-third/20 dark:sm:border-third/30 rounded-sm p-5 sm:p-6">
           <div className="flex gap-2 items-center">
             <h1 className="text-base sm:text-xl font-semibold">{work.role}</h1>
           </div>
