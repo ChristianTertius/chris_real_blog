@@ -42,31 +42,31 @@ const About = () => {
 
       <div className="my-3 space-y-3 relative">
         <div>
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-xl sm:text-4xl font-bold">
             <span ref={elementRef}>{hasTyped ? 'Christian Carlos Tertius' : ''}</span>
             {!isComplete && !hasTyped && (
               <span className="inline-block ml-1 text-third">|</span>
             )}
           </h1>
-          <h3 className={`text-lg items-center`}>Software Engineer | Developer</h3>
+          <h3 className={`text-xs sm:text-lg items-center`}>Software Engineer | Developer</h3>
         </div>
 
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-xs sm:text-base">
           <MailIcon className="size-4" />
           <h1 className="">{user.email}</h1>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-xs sm:text-base">
           <MapPin className="size-4" />
           <h1 className="">{user.current_location}</h1>
         </div>
         {user.current_role && (
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center text-xs sm:text-base">
             <Computer className="size-4" />
             <h1 className="">{user.current_role}</h1>
           </div>
         )}
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col text-sm sm:text-xs leading-6">
         <p className="text-left">👋 {user.description}</p>
 
         <OnTheWeb />

@@ -28,7 +28,12 @@
 [] mobile fix:
     [✅] work - ganti pake bullet
     [✅] minesin padding work
-    [✅] blog detail
-    [] project
-    [] techs ui fix
+    [✅] blog detail padding
+    [] project padding
+    [] project text-size
+    [] project techs
+    [] About title per page mobile view
+        [] semuanya
+    [] Project title per page mobile view
+    [] Blog title per page mobile view
 [] font family jadi local

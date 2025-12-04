@@ -12,7 +12,7 @@ const ILove = ({ lovetodo }: ILoveProps) => {
         <h1 className="text-2xl font-bold underline underline-offset-8">What I Love to Do</h1>
       </div>
 
-      <div className="mt-5 space-y-2">
+      <div className="mt-5 space-y-2 text-sm sm:text-base">
         {lovetodo}
       </div>
     </div>

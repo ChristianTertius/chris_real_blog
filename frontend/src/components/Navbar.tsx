@@ -33,7 +33,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="py-5 flex justify-between p-5 sm:px-0">
+    <nav className="py-5 flex items-center justify-between p-5 sm:px-0">
       <div className="gap-5 flex">
         <Link to="/" className={`hover:text-third transition-colors duration-150 hover:underline underline-offset-10 decoration-2 ${location.pathname == '/' ? 'underline underline-offset-10 text-third' : ''}`}>About</Link>
         <Link to="/projects" className={`hover:text-third transition-colors duration-150 hover:underline underline-offset-10 decoration-2 ${location.pathname == '/projects' ? 'underline underline-offset-10 text-third' : ''}`}>Project</Link>
