@@ -5,7 +5,7 @@
     "description": "I think Neovim better for Fullstack Developer",
     "image": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800",
     "date": "June, 2025",
-    "content": "For me—someone who loves typing more than thinking, hahaha—I really enjoy coding with Neovim. I can do everything without touching the mouse; the Vim motions and Neovim plugins really help with that. That’s why I prefer Neovim over VS Code. But I’ve noticed that you can’t just use Neovim instantly. Why? Because using Neovim is a journey. You need to decide your own path: which motions you prefer, how you want to build your keymaps, what plugins you like, how you want to customize your setup, and so on. All of that takes time. So if you want an instant code editor and you rely on using your mouse a lot, Neovim might not be for you. But for me? Hahaha, it’s perfect. and this is my neovim looks like:",
+    "content": "  For me—someone who loves typing more than thinking, hahaha—I really enjoy coding with Neovim. I can do everything without touching the mouse; the Vim motions and Neovim plugins really help with that. That’s why I prefer Neovim over VS Code. But I’ve noticed that you can’t just use Neovim instantly. Why? Because using Neovim is a journey. You need to decide your own path: which motions you prefer, how you want to build your keymaps, what plugins you like, how you want to customize your setup, and so on. All of that takes time. So if you want an instant code editor and you rely on using your mouse a lot, Neovim might not be for you. But for me? Hahaha, it’s perfect. and this is my neovim looks like:",
     "content_image": "neovim_setup.png"
   },
   {
@@ -14,6 +14,6 @@
     "description": "React Native is the best bro",
     "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800",
     "date": "April, 2025",
-    "content": "You're so fucking stupid,' maybe that's what you're thinking. Look, I know Flutter often has better performance for complex animations and UI, and yeah, I'm aware of that. But why do I still choose React Native over Flutter? Simple: I'm a fullstack developer with a solid foundation in React. Migrating to React Native is way easier for me compared to learning Dart and Flutter from scratch. I work on multiplatform projects—sometimes mobile apps, sometimes web apps—so staying in the JavaScript/React ecosystem just makes more sense for my workflow. Even though I have good experience with Java and Kotlin, I still prefer React Native because of the productivity boost and code reusability across platforms."
+    "content": "  You're so fucking stupid,' maybe that's what you're thinking. Look, I know Flutter often has better performance for complex animations and UI, and yeah, I'm aware of that. But why do I still choose React Native over Flutter? Simple: I'm a fullstack developer with a solid foundation in React. Migrating to React Native is way easier for me compared to learning Dart and Flutter from scratch. I work on multiplatform projects—sometimes mobile apps, sometimes web apps—so staying in the JavaScript/React ecosystem just makes more sense for my workflow. Even though I have good experience with Java and Kotlin, I still prefer React Native because of the productivity boost and code reusability across platforms."
   }
 ]

@@ -41,5 +41,43 @@
       "Tailwind",
       "Bootstrap"
     ]
+  },
+  {
+    "name": "Golang REST API",
+    "type": "Realtime Chat Web Application",
+    "year": 2025,
+    "achievement": "REST API using golang + JWT authentication with best practice implementation",
+    "link_github": "https://github.com/ChristianTertius/go-jwt.git",
+    "techs": [
+      "Golang",
+      "Go-Chi",
+      "Postgres"
+    ]
+  },
+  {
+    "name": "Yamada Motorcycle",
+    "type": "Motorcycle Store",
+    "year": 2022,
+    "achievement": "Static web created for Human Computer Interaction for mid exam evaluation",
+    "link_github": "https: //christiantertius.github.io/yamada-motorcycle/",
+    "techs": [
+      "HTML",
+      "CSS",
+      "JS"
+    ]
+  },
+  {
+    "name": "GSAP Awards",
+    "type": "Interactive Animation Showcase",
+    "year": 2023,
+    "achievement": "Award-inspired web experience featuring advanced GSAP animations with scroll-triggered sequences, parallax effects, and timeline orchestration. Demonstrates technical mastery of animation timing, easing functions, and performance optimization while maintaining smooth 60fps across all devices.",
+    "link_github": "https://github.com/ChristianTertius/gsap-awwards",
+    "techs": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
+      "ScrollTrigger"
+    ]
   }
 ]
