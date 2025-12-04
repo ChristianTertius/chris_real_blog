@@ -4,17 +4,15 @@ import { Link, useLocation } from "react-router"
 
 const Navbar = () => {
   const location = useLocation();
-  const [isDark, setIsDark] = useState(true); // Set default ke true
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
 
-    // Jika ada saved theme, gunakan itu. Jika tidak, default dark mode
     if (savedTheme === 'light') {
       setIsDark(false);
       document.documentElement.classList.remove('dark');
     } else {
-      // Default dark mode
       setIsDark(true);
       document.documentElement.classList.add('dark');
       if (!savedTheme) {

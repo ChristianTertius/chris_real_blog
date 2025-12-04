@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router"
 import blogsData from '@/datas/blogs.json'
 import { ArrowLeft } from "lucide-react";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const BlogDetail = () => {
       navigate('/blogs')
     }
   }, [id, navigate])
-
+  useDocumentTitle(blog ? `Blog - ${blog.title} - Chris` : "Blog - Chris");
   return (
     <div className="mt-5">
       <button
