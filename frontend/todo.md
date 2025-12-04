@@ -36,7 +36,6 @@
         [✅] semuanya
     [✅] Project title per page mobile view
     [✅] Blog title per page mobile view
-    [] Blog detail mt 
-    [] about me description gap
-    [] section heading fix
-[] font family jadi local
+    [✅] Blog detail mt 
+    [✅] about me description gap
+    [✅] section heading fix
