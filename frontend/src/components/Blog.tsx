@@ -78,7 +78,7 @@ const Blog = () => {
           <button
             onClick={goToPrevPage}
             disabled={currentPage === 1}
-            className="p-2 rounded-md border border-secondary/20 hover:bg-third/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="cusor-pointer p-2 rounded-md border border-secondary/20 hover:bg-third/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             <ChevronLeft className="size-5" />
           </button>
@@ -89,7 +89,7 @@ const Blog = () => {
               <button
                 key={pageNum}
                 onClick={() => goToPage(pageNum)}
-                className={`px-4 py-2 rounded-md border transition-all ${currentPage === pageNum
+                className={`cursor-pointer px-4 py-2 rounded-md border transition-all ${currentPage === pageNum
                   ? 'bg-third text-white border-third'
                   : 'border-secondary/20 hover:bg-third/10'
                   }`}
@@ -102,7 +102,7 @@ const Blog = () => {
           <button
             onClick={goToNextPage}
             disabled={currentPage === totalPages}
-            className="p-2 rounded-md border border-secondary/20 hover:bg-third/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="cursor-pointer p-2 rounded-md border border-secondary/20 hover:bg-third/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             <ChevronRight className="size-5" />
           </button>
