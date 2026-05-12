@@ -33,7 +33,7 @@
     "type": "Inventory Management System",
     "month": 7,
     "year": 2025,
-    "achievement": "Website for you manage your inventory like stocks, products, finance, and many more with realtime notification",
+    "achievement": "Full-featured inventory management system with real-time notifications, product & stock tracking, and financial reporting.",
     "link_github": "https://github.com/Xynno22/InventoryManagement",
     "link_website": "",
     "techs": [
@@ -49,7 +49,7 @@
     "type": "Realtime Chat Web Application",
     "year": 2025,
     "month": 6,
-    "achievement": "Website for you to chat with all of your friend with real time notification, and online users indicator",
+    "achievement": "Real-time chat application with WebSocket-based messaging, online presence indicator, and instant notifications.",
     "link_github": "https://github.com/ChristianTertius/chatty",
     "techs": [
       "MongoDB",
@@ -64,25 +64,13 @@
     "type": "Online Top Up Game Store",
     "year": 2025,
     "month": 5,
-    "achievement": "Built a online top up game store and can help you to buy your games items with tracking your order",
+    "achievement": "E-commerce platform for in-game top-up with order management and real-time order tracking system",
     "link_github": "https://github.com/changjli/pisonz",
     "link_website": "",
     "techs": [
       "Laravel",
       "Tailwind",
       "Bootstrap"
-    ]
-  },
-  {
-    "name": "Yamada Motorcycle",
-    "type": "Motorcycle Store",
-    "year": 2021,
-    "achievement": "Static web created for Human Computer Interaction for mid exam evaluation",
-    "link_github": "https: //christiantertius.github.io/yamada-motorcycle/",
-    "techs": [
-      "HTML",
-      "CSS",
-      "JS"
     ]
   },
   {
