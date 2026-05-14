@@ -63,12 +63,12 @@ const Blog = () => {
 
 
       {currentBlog.map((blog) => (
-        <Link to={`/blogs/${blog.id}`} className="text-sm flex-wrap sm:text-lg my-3 flex items-start justify-start sm:justify-between sm:flex-row flex-col group sm:items-center group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">
+        <Link to={`/blogs/${blog.id}`} className="text-sm flex-wrap sm:text-base my-3 flex items-start justify-start sm:justify-between sm:flex-row flex-col group sm:items-center group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">
           <h1 className="group-hover:text-third group-hover:underline">
             {blog.title}
           </h1>
 
-          <p className="group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10">{blog.date}</p>
+          <p className="group-hover:text-third transition-all duration-50 group-hover:underline underline-offset-10 text-sm">{blog.date}</p>
 
         </Link>
       ))}
