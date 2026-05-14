@@ -7,8 +7,8 @@ interface ILoveProps {
 const ILove = ({ lovetodo }: ILoveProps) => {
   return (
     <div className="my-10">
-      <div className="flex items-center gap-2 ">
-        <HeartIcon className="size-5 sm:size-6" />
+      <div className="flex ">
+        {/* <HeartIcon className="size-5 sm:size-6" /> */}
         <h1 className="text-xl sm:text-2xl font-bold underline underline-offset-8">What I Love to Do</h1>
       </div>
 

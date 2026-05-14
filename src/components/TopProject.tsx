@@ -22,7 +22,7 @@ const TopProject = () => {
   return (
     <div className="my-10">
       <div className="flex items-center gap-2 ">
-        <Presentation className="size-5 sm:size-6" />
+        {/* <Presentation className="size-5 sm:size-6" /> */}
         <h1 className="text-xl sm:text-2xl font-bold underline underline-offset-8">Projects</h1>
       </div>
 
