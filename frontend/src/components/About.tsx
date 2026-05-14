@@ -48,7 +48,7 @@ const About = () => {
               <span className="inline-block ml-1 text-third">|</span>
             )}
           </h1>
-          <h3 className={`text-xs sm:text-lg items-center`}>Software Engineer | Developer</h3>
+          <h3 className={`text-xs sm:text-lg items-center font-thin`}>Software Engineer</h3>
         </div>
 
         <div className="flex gap-2 items-center text-xs sm:text-base">
