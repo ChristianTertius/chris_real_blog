@@ -94,7 +94,7 @@ body::-webkit-scrollbar {
 
 :root {
   --radius: 0.625rem;
-  --background: #f0e7db;
+  --background: #fff1e6;
   --foreground: #101828;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
