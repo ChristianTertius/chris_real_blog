@@ -69,7 +69,7 @@ const Project = () => {
       </div>
 
       {currentProject.map((project) => (
-        <div className="block my-5 hover:bg-third/5 space-y-5 border border-third/20 p-5 rounded-md group hover:border-third transition-all duration-150">
+        <div className="block my-5 hover:bg-third/5 space-y-5 border-2 border-third dark:border-third/50 border-dashed p-5 rounded-md group hover:border-third transition-all duration-150">
           <div className="flex justify-between">
             <div>
               <div className="flex items-center gap-2">
