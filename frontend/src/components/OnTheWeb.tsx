@@ -4,7 +4,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip"
 const OnTheWeb = () => {
   return (
     <div className="my-5 flex gap-2 mx-auto items-center">
-      <a href="/CV - Fullstack Developer - Christian Carlos Tertius .pdf" className="border border-third/20 hover:bg-third/10 hover:border-third dark:border dark:border-third/30 flex items-center gap-2 transition-all size-full duration-150 rounded-sm p-2 block gap-2 text-xs sm:text-sm">
+      <a href="/CV - Fullstack Developer - Christian Carlos Tertius .pdf" className="border-2 border-dashed border-third hover:bg-third/20 hover:border-third  dark:border-third/30 flex items-center gap-2 transition-all size-full duration-150 rounded-sm py-2 px-3 block gap-2 text-xs sm:text-sm">
         <FileDown className="size-4" /> Download CV
       </a>
 
