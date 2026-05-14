@@ -103,7 +103,7 @@ const Project = () => {
             <div className="flex justify-between items-center ">
               <div className="flex gap-2 flex-wrap">
                 {project.techs.map((tech) => (
-                  <p className="tracking-wider border border-third/20 p-1 px-2 rounded-full text-xs sm:text-sm">{tech}</p>
+                  <p className="border border-[#252525]/40 dark:border-third/30 rounded-full px-2 text-xs sm:text-sm">{tech}</p>
                 ))}
               </div>
 
