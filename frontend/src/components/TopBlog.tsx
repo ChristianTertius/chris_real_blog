@@ -21,7 +21,7 @@ const TopBlog = () => {
       {blogs.map((blog) => (
         <Link to={`/blogs/${blog.id}`} className="group mt-5 flex justify-between items-center flex-wrap">
           <h1 className="text-sm sm:text-base group-hover:text-third transition-all duration-150">{blog.title}</h1>
-          <p className="text-xs text-white/50 sm:text-white sm:text-base group-hover:text-third transition-all duration-150">{blog.date}</p>
+          <p className=" text-xs dark:sm:text-white dark:hover:text-third sm:text-base dark:group-hover:text-third group-hover:text-third transition-all duration-150">{blog.date}</p>
         </Link>
       ))}
       <Link to="/blogs" className="text-third text-shadow-amber-950 text-sm items-center mt-5 flex gap-1 group hover:underline underline-offset-8">
